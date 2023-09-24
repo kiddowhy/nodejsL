@@ -18,5 +18,5 @@ app.get('/home', (req, res) => {
 app.post("/datainfo", (req, res) => { 
     console.log(req.body)
 })
- 
+
 app.listen(4000, () => console.log("server on"))
