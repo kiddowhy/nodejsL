@@ -1,12 +1,13 @@
 
 const express = require('express')
-
-var fs = require('fs')
-
-let jsonDataVar = JSON.parse(fs.readFileSync('./data/jsonDataIn.json', 'utf-8'))
+const fs = require('fs')
+ 
+//fs.readFile('./data/jsonDataOut.json', 'utf-8', (err, jsonString) => {
+//    if (err) console.log(err)
+//    else console.log(jsonString)
+//    })
 
 const app = express()
-
 app.use(express.json())
 
 app.get('/home', (req, res) => {
@@ -17,6 +18,9 @@ app.get('/home', (req, res) => {
 
 app.post("/datainfo", (req, res) => { 
     console.log(req.body)
-})
+    fs.writeFile('./data/jsonDataIn.json',JSON.stringify (req.body), (err) => {
+        if (err) console.log(err)
+    })
 
+})
 app.listen(4000, () => console.log("server on"))
