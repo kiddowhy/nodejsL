@@ -1,0 +1,2 @@
+D:\githubproject\jsApplicaton\testserver\obj\Debug\testserver.esproj.SuggestedBindingRedirects.cache
+D:\githubproject\jsApplicaton\testserver\obj\Debug\testserver.esproj.CoreCompileInputs.cache

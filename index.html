@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>testing json in and out</title>
+</head>
+<body>
+    <label> name <input type="text" class="username"/> </label>
+        <button>send data</button>
+    <script> 
+        var myName = document.querySelector(".username")
+        var getBtn = document.querySelector("button")
+
+        const baseUrl = 'http://localhost:3000/tast1'
+
+        getBtn.addEventListener("click", () => {
+
+            var obj = myName.value;
+            
+
+        
+            fetch("/datainfo",{
+                method:"POST",
+                headers:{"Context-type": " text/plain"},
+
+                body: obj
+                
+                });
+
+        })
+
+        
+
+    </script>
+    
+</body>
+</html>
