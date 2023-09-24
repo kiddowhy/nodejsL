@@ -16,15 +16,16 @@
 
         getBtn.addEventListener("click", () => {
 
-            var obj = myName.value;
-            
+            var obj = {
+                "name": myName.value
+            } 
 
         
             fetch("/datainfo",{
                 method:"POST",
-                headers:{"Context-type": " text/plain"},
+                headers:{"Content-type": " application/json"},
 
-                body: obj
+                body: JSON.stringify( obj)
                 
                 });
 

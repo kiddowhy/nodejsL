@@ -7,7 +7,7 @@ let jsonDataVar = JSON.parse(fs.readFileSync('./data/jsonDataIn.json', 'utf-8'))
 
 const app = express()
 
-app.use(express.text())
+app.use(express.json())
 
 app.get('/home', (req, res) => {
     res.sendFile("index.html", { root:__dirname
